@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: example-argo-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/philopian/hello-argo.git
+    targetRevision: HEAD
+    path: example-argo-app
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: example-argo-app
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false

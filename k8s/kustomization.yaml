@@ -1,0 +1,5 @@
+namespace: testing-k8s
+namePrefix: test-
+resources:
+  - app.yaml
+

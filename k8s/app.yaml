@@ -1,0 +1,52 @@
+############################################################
+#
+# $ kubectl create namespace testing-k8s
+# $ kubectl apply -f app.yaml --namespace=testing-k8s
+#
+#
+# $ kubectl get pods --namespace=testing-k8s
+# $ kubectl exec -it <POD_ID> bash
+#
+# $ minikube service node-express-api -p hello-argo --namespace=testing-k8s
+############################################################
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-express-api
+  labels:
+    app: node-express-api
+spec:
+  selector:
+    app: node-express-api
+  ports:
+    - port: 3000
+      protocol: TCP
+      nodePort: 30001
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-deploy
+  labels:
+    app: node-express-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-express-api
+  template:
+    metadata:
+      labels:
+        app: node-express-api
+    spec:
+      containers:
+        - image: hello-node:v1
+          imagePullPolicy: Never # use local
+          name: node-api
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+---
+
