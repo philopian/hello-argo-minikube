@@ -14,11 +14,11 @@
 - [Getting started](https://argoproj.github.io/argo-cd/getting_started/)
 
 1. Setup your cluster
-  ```
-  $ minikube start --kubernetes-version v1.15.7
-  $ eval $(minikube docker-env)
-  $ kubectl config get-contexts
-  ```
+    ```
+    $ minikube start --kubernetes-version v1.15.7
+    $ eval $(minikube docker-env)
+    $ kubectl config get-contexts
+    ```
 
 2. Build local docker image with the k8s docker engine
   - You want to make sure you build the docker image inside the cluster so it will have access to it
@@ -71,8 +71,8 @@
 
 7. Create an Application
 ```
-$ cd ..
-$ kubectl apply -n argocd -f app.yaml
+$ cd <REPO_ROOT>
+$ kubectl apply -n argocd -f argo/app.yaml
 ```
 
 

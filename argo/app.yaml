@@ -6,11 +6,11 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/philopian/hello-argo.git
-    targetRevision: HEAD
-    path: example-argo-app
-    directory:
-      recurse: true
+    repoURL: https://github.com/philopian/hello-argo-minikube.git
+    # targetRevision: HEAD
+    path: k8s
+    # directory:
+    #   recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: example-argo-app
