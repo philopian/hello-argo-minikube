@@ -1,5 +1,9 @@
-# DOCKER_IMAGE_NAME=hello-node:v1
+#####################################
 # MINIKUBE_PROFILE=argo
+# DOCKER_IMAGE_NAME=hello-node:v1
+# K8S_NAMESPACE=argocd
+# NAME_PREFIX=dev
+#####################################
 
 
 # Create the local docker image
@@ -11,8 +15,8 @@ docker images | grep hello-node
 popd
 
 # Use kustomize to build the k8s files to ./argo/k8s-app.yaml
-pushd k8s/example-app
-kustomize build > ../../argo/example-app/app.yaml
+pushd k8s
+kustomize build example-app/testing | ../argo/example-app/app.yaml
 popd
 
 

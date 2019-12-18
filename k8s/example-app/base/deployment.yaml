@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-deploy
+  labels:
+    app: node-express-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-express-api
+  template:
+    metadata:
+      labels:
+        app: node-express-api
+    spec:
+      containers:
+        - image: hello-node:v1
+          imagePullPolicy: Never # use local
+          name: node-api
+          ports:
+            - containerPort: 3000
+              protocol: TCP

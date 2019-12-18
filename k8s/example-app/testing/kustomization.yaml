@@ -1,0 +1,4 @@
+namespace: testing
+resources:
+- ../base
+namePrefix: test-

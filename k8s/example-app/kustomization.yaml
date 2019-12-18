@@ -1,5 +1,5 @@
-namespace: argocd
-namePrefix: test-
 resources:
-  - app.yaml
-
+- dev
+- staging
+- production
+- testing
