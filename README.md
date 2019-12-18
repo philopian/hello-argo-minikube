@@ -71,8 +71,8 @@
 
 7. Create an Application
 ```
-$ cd <REPO_ROOT>
-$ kubectl apply -n argocd -f argo/app.yaml
+$ cd argo
+$ kubectl apply -n argocd -f app.yaml
 ```
 
 

@@ -1,1 +1,1 @@
-kustomize build | kubectl apply -f -
+kustomize build > ../argo/app.yaml

@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: node-express-api
+  name: test-node-express-api
+  namespace: argocd
+spec:
+  ports:
+  - nodePort: 30001
+    port: 3000
+    protocol: TCP
+  selector:
+    app: node-express-api
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: node-express-api
+  name: test-example-deploy
+  namespace: argocd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: node-express-api
+  template:
+    metadata:
+      labels:
+        app: node-express-api
+    spec:
+      containers:
+      - image: hello-node:v1
+        imagePullPolicy: Never
+        name: node-api
+        ports:
+        - containerPort: 3000
+          protocol: TCP

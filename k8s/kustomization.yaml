@@ -1,4 +1,4 @@
-namespace: testing-k8s
+namespace: argocd
 namePrefix: test-
 resources:
   - app.yaml
