@@ -1,5 +1,5 @@
-DOCKER_IMAGE_NAME=hello-node:v1
-MINIKUBE_PROFILE=argo
+# DOCKER_IMAGE_NAME=hello-node:v1
+# MINIKUBE_PROFILE=argo
 
 
 # Create the local docker image
