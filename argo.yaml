@@ -7,10 +7,10 @@ spec:
   project: default
   source:
     repoURL: https://github.com/philopian/hello-argo-minikube.git
-    # targetRevision: HEAD
-    path: k8s/app.yaml
-    # directory:
-    #   recurse: true
+    targetRevision: HEAD
+    path: k8s
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: example-argo-app
