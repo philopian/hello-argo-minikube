@@ -15,7 +15,7 @@
 
 1. Setup your cluster
     ```
-    $ minikube start --kubernetes-version v1.15.7
+    $ minikube start --kubernetes-version v1.15.7 -p argo
     $ eval $(minikube docker-env)
     $ kubectl config get-contexts
     ```
