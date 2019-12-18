@@ -1,1 +1,0 @@
-kustomize build > ../argo/app.yaml
