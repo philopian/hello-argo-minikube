@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/philopian/hello-argo-minikube.git
     # targetRevision: HEAD
-    path: k8s
+    path: k8s/app.yaml
     # directory:
     #   recurse: true
   destination:
