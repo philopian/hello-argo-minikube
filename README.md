@@ -20,25 +20,17 @@
 
 ## Run Argo with example K8s app
 1. Setup the argo application
-  - Load environment variables
+  - Setup and run your argo application
     ```
-    $ . ./.env
+    $ ./start-minikube.sh
+    $ ./init-argo.sh
     ```
-    - or
+  - The argo server is now running, now it's time to run your application
     ```
-    $ export MINIKUBE_PROFILE=argo DOCKER_IMAGE_NAME=hello-node:v1 K8S_NAMESPACE=argocd NAME_PREFIX=dev
+    $ ./apply-argo-app.sh
     ```
-  - Spin up a cluster with minikube  
-    ```
-    $ minikube start --kubernetes-version v1.15.7 -p $MINIKUBE_PROFILE
-    $ kubectl create namespace $K8S_NAMESPACE
-    $ kubectl apply -n $K8S_NAMESPACE -f argo/install.yaml
-    $ kubectl create clusterrolebinding YOURNAME-cluster-admin-binding --clusterrole=cluster-admin --user=YOUREMAIL@gmail.com
-    $ ./build.sh
-    $ ./up.sh
-    $ minikube service $NAME_PREFIX-node-express-api --namespace=$K8S_NAMESPACE -p $MINIKUBE_PROFILE
-    ```
-2. View Argo's GUI
+
+2. View your Argo app in the browser
   - Get the admin password
     ```
     $ ./argo/get-argo-password.sh
@@ -50,7 +42,19 @@
 
 
 
-
+## Test out the k8s application without argo
+- Make sure you have a cluster ready if not run: `$ ./start-minikube.sh`
+- Build the docker image on the cluster's docker engine
+  - You want to have this image built before running k8s cause _this specific image_ is _not_ on dockerhub
+  ```
+  $ cd docker
+  $ ./build-local-image.sh
+  ```
+- Build and run the k8s files
+  ```
+  $ cd k8s
+  $ ./run-local.sh
+  ```
 
 
 
@@ -90,8 +94,6 @@
     $ minikube service test-node-express-api --namespace=testing-k8s -p argo
     $ kubectl delete namespace testing-k8s
     ```
-
-
 
 5. Run the Argo CD server locally
   - By default, the Argo CD API server is not exposed with an external IP. 

@@ -10,11 +10,8 @@ docker build -t $DOCKER_IMAGE_NAME .
 docker images | grep hello-node
 popd
 
-# Use kustomize to build the k8s files to ./argo/k8s-app.yaml
-pushd k8s/example-app/$K8S_DELOPMENT_ENV
-kustomize build . | ../../argo/example-app/app.yaml
+
+# Create k8s manifest files using kustomize (Results: ./argo/k8s-app.yaml)
+pushd k8s/example-app/$K8S_ENV
+kustomize build . > ../../../argo/example-app/app.yaml
 popd
-
-
-# TODO: 
-# TODO: 
