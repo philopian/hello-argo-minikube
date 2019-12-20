@@ -20,15 +20,16 @@
 
 ## Run Argo with example K8s app
 1. Setup the argo application
-  - Setup and run your argo application
+  - Setup & run your argo application
     ```
     $ ./start-minikube.sh
     $ ./init-argo.sh
     ```
   - The argo server is now running, now it's time to run your application
-    ```
-    $ ./apply-argo-app.sh
-    ```
+    - Open a new Terminal:
+      ```
+      $ ./apply-argo-app.sh
+      ```
 
 2. View your Argo app in the browser
   - Get the admin password
@@ -39,6 +40,18 @@
   - Go to https://localhost:8080/
     username: admin
     password: argocd-server-xxxxxxxxx-xxxxx
+
+## Make shared to the Docker image
+1. Change the express server code
+2. Bump the package.json file `docker/webserver/package.json`
+3. Bump the Docker image version 
+  ```
+  ./.env
+  ./k8s/example-app/base/deployment.yaml
+  ```
+
+
+
 
 
 

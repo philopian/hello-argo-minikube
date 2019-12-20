@@ -2,7 +2,7 @@
 
 # Local evironement variables
 . ../.env
-DOCKER_IMAGE_NAME=hello-node:v1
+DOCKER_IMAGE_NAME=hello-node:v2
 
 # Point docker to the minikube docker engine instead of local one
 eval $(minikube docker-env -p $MINIKUBE_PROFILE)
