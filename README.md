@@ -49,6 +49,12 @@
   ./.env
   ./k8s/example-app/base/deployment.yaml
   ```
+4. Update the config for the new Argo app
+  ```
+  $ cd scripts
+  $ ./update-argo-app.sh
+  ```
+5. Push code to github to view the changes
 
 
 

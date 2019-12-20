@@ -15,7 +15,7 @@ spec:
         app: node-express-api
     spec:
       containers:
-        - image: hello-node:v2
+        - image: hello-node:v2.1
           imagePullPolicy: Never # use local
           name: node-api
           ports:
