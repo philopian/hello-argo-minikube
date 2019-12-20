@@ -1,5 +1,5 @@
 # Load some ENV
-. ./.env
+. ../.env
 
 # Apply argo app
 pushd argo

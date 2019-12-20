@@ -1,14 +1,14 @@
 # Load some ENV
-. ./.env
+. ../.env
 
 # Apply argo app
-pushd argo
+pushd ../argo
 kubectl apply -n argocd -f argo.yaml
-
+popd
 sleep 2
 
 # Provide a way to access the application in the browser
-minikube service $NAME_PREFIX-node-express-api --namespace=$K8S_NAMESPACE -p $MINIKUBE_PROFILE
+minikube service ${NAME_PREFIX}node-express-api --namespace=$K8S_NAMESPACE -p $MINIKUBE_PROFILE
 
 echo '\n\n'
 echo 'YOUR ARGO PASSWORD:'
