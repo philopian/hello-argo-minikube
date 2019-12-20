@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: node-express-api
-  name: dev-node-express-api
+  name: node-express-api
   namespace: development
 spec:
   ports:
@@ -19,7 +19,7 @@ kind: Deployment
 metadata:
   labels:
     app: node-express-api
-  name: dev-example-deploy
+  name: example-deploy
   namespace: development
 spec:
   replicas: 2

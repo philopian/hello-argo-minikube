@@ -1,9 +1,9 @@
 # Load some ENV
 . ./.env
 
-## Apply argo app
-# pushd argo
-# kubectl apply -n argocd -f argo.yaml
+# Apply argo app
+pushd argo
+kubectl apply -n argocd -f argo.yaml
 
 sleep 2
 
