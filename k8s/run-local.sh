@@ -1,7 +1,7 @@
 # Local evironement variables
 . ../.env
 K8S_NAMESPACE=testing
-K8S_ENV=testing
+K8S_NAMESPACE=testing
 NAME_PREFIX=test-
 
 # Point docker to the minikube docker engine instead of local one
@@ -11,7 +11,7 @@ eval $(minikube docker-env -p $MINIKUBE_PROFILE)
 kubectl create namespace $K8S_NAMESPACE
 
 # Run the config
-kustomize build example-app/$K8S_ENV | kubectl apply -f -
+kustomize build example-app/$K8S_NAMESPACE | kubectl apply -f -
 
 
 # Run the service in the browser

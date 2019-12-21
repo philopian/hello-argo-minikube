@@ -49,10 +49,10 @@
   ./.env
   ./k8s/example-app/base/deployment.yaml
   ```
-4. Update the config for the new Argo app
+4. Update the docker/k8s manifest
   ```
   $ cd scripts
-  $ ./update-argo-app.sh
+  $ ./build.sh
   ```
 5. Push code to github to view the changes
 

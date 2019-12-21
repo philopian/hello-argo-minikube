@@ -13,7 +13,7 @@ spec:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: development  # TODO: make this namespace dynamic based on the kustomize
+    namespace: development
   syncPolicy:
     automated:
       prune: false

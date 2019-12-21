@@ -15,5 +15,4 @@ kubectl create namespace $K8S_NAMESPACE
 ./build.sh
 
 # Run the local Argo server
-sleep 2 # sleep for to allow pods to be created
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+./start-argo-server.sh

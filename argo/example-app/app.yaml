@@ -32,7 +32,7 @@ spec:
         app: node-express-api
     spec:
       containers:
-      - image: hello-node:v2.1
+      - image: hello-node:v1.0
         imagePullPolicy: Never
         name: node-api
         ports:
